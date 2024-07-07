@@ -87,8 +87,8 @@ function App() {
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh', padding: '20px' }}>
       <div className="row">
-        <div className="col-md-4"></div>
-        <div className="col-md-4 justify-content-center align-items-center p-5">
+        <div className="col-md-2 col-sm-1"></div>
+        <div className="col-md-8 col-sm-10 justify-content-center align-items-center p-5">
           <h3 className="text-center mt-3 text-light">BMI Calculator</h3>
           <p className="text-center m-4 text-light">
             BMI (body mass index) is a measure for adults to check what category their height and weight puts them in - underweight, healthy, or overweight.
@@ -97,11 +97,11 @@ function App() {
             The calculator will give you an idea of how your weight compares to common values. Body Mass Index (BMI) is calculated as your weight divided by the square of your height or BMI = weight/height2.
           </p>
 
-          <div style={{ height: '600px', width: "100%", backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-5 p-4">
-            <h4 className="p-2 mt-md-5" style={{ color: "black" }}>BMI Result: {bmi}</h4>
-            <p className='fw-bold mt-5 p-md-2'>{text}</p>
+          <div style={{ height: '500px', width: "100%", backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-5 p-5">
+            <h4 className="p-2 mt-md-5 mt-3" style={{ color: "black" }}>BMI Result: {bmi}</h4>
+            <p className='fw-bold mt-md-5  p-md-2'>{text}</p>
             <ReactSpeedometer
-              width={295}
+              width={275}
               needleHeightRatio={0.60}
               value={bmi}
               segments={4}
@@ -154,7 +154,7 @@ function App() {
             If you think you have an eating disorder, the BMI calculator may not be suitable for you.
           </p>
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-2 col-sm-1"></div>
       </div>
     </div>
   );
