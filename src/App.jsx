@@ -99,9 +99,9 @@ function App() {
 
           <div style={{ height: '600px', width: "100%", backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-5 p-4">
             <h4 className="p-2 mt-md-5" style={{ color: "black" }}>BMI Result: {bmi}</h4>
-            <p className='fw-bold mt-5 p-2'>{text}</p>
+            <p className='fw-bold mt-5 p-md-2'>{text}</p>
             <ReactSpeedometer
-              width={311}
+              width={295}
               needleHeightRatio={0.60}
               value={bmi}
               segments={4}
