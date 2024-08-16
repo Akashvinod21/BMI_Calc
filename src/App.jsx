@@ -12,6 +12,7 @@ function App() {
   const [IsHeight,setIsHeight]=useState(true)
   const [IsWeight,setIsWeight]=useState(true)
   const [color, setColor] = useState('white');
+  
 
   const validate = (e) => {
     const name=e.target.name
@@ -39,7 +40,7 @@ function App() {
 
   const calculate = (e) => {
     e.preventDefault();
-    if (height === "" || weight === "") {
+    if (height == "" || weight == "") {
       alert("Please fill the form completely");
     } else {
       const heightInMeters = height / 100;
@@ -97,36 +98,41 @@ function App() {
             The calculator will give you an idea of how your weight compares to common values. Body Mass Index (BMI) is calculated as your weight divided by the square of your height or BMI = weight/height2.
           </p>
 
-          <div style={{ height: '500px', width: "100%", backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-5 p-5">
-            <h4 className="p-2 mt-md-5 mt-3" style={{ color: "black" }}>BMI Result: {bmi}</h4>
-            <p className='fw-bold mt-md-5  p-md-2'>{text}</p>
-            <ReactSpeedometer
-              width={275}
-              needleHeightRatio={0.60}
-              value={bmi}
-              segments={4}
-              customSegmentStops={[0, 18, 25, 30, 45]}
-              segmentColors={['#1D91F1', '#38DF17', '#EBF11D', '#F1671D']}
-              minValue={0}
-              maxValue={45}
-              currentValueText="BMI"
-              customSegmentLabels={[
-                { text: "Underweight", position: "INSIDE", color: "#555" },
-                { text: "Healthy", position: "INSIDE", color: "#555" },
-                { text: "Over", position: "INSIDE", color: "#555" },
-                { text: "Obesity", position: "INSIDE", color: "#555" },
-              ]}
-              ringWidth={47}
-              needleTransitionDuration={3333}
-              needleTransition="easeElastic"
-              needleColor={"black"}
-              textColor={"#d8dee9"}
-            />
-           
-          </div>
-
-          <div style={{ width: "100%", backgroundColor: 'white' }} className="shadow p-md-3 rounded mt-4">
-            <form className="mt-4 p-5" onSubmit={calculate}>
+          <div style={{ height: '680px', width: "100%", backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-5 p-5">
+            <h4 className="p-2 mt-md-5 mt-3 fs-1" style={{ color: "black" }}>BMI Result: {bmi}</h4>
+            
+            <div className="row w-100">
+              <div className="col-md-6">
+              <p className='fw-bold p-md-2 text-center'>{text}</p>
+              <div className='justify-content-center align-items-center' style={{height:"150px"}}>
+                <ReactSpeedometer
+                width={275}
+                
+                needleHeightRatio={0.60}
+                value={bmi}
+                segments={4}
+                customSegmentStops={[0, 18, 25, 30, 45]}
+                segmentColors={['#1D91F1', '#38DF17', '#EBF11D', '#F1671D']}
+                minValue={0}
+                maxValue={45}
+                currentValueText="BMI"
+                customSegmentLabels={[
+                  { text: "Underweight", position: "INSIDE", color: "#555" },
+                  { text: "Healthy", position: "INSIDE", color: "#555" },
+                  { text: "Over", position: "INSIDE", color: "#555" },
+                  { text: "Obesity", position: "INSIDE", color: "#555" },
+                ]}
+                ringWidth={47}
+                needleTransitionDuration={3333}
+                needleTransition="easeElastic"
+                needleColor={"black"}
+                textColor={"#d8dee9"}
+              />
+              </div>
+              </div>
+              <div className="col-md-6">
+              <div className='shadow rounded mt-3' style={{ backgroundColor: 'transparent' }} >
+              <form className="mt-md-4 p-5" onSubmit={calculate}>
               <div className="mb-3">
               <TextField id="filled-basic" label="Height(cm)" variant="filled" className="w-100" onChange={(e)=>validate(e)} name="height" value={height||""} />
                 {!IsHeight &&
@@ -144,6 +150,14 @@ function App() {
                 <Button variant="outlined" type="button" style={{ width: '150px', padding: '15px' }} onClick={resetForm} color='error'>Reset</Button>
               </div>
             </form>
+              </div>
+              </div>
+            </div>
+           
+          </div>
+
+          <div style={{ width: "100%", backgroundColor: 'white' }} className="shadow p-3 rounded mt-4">
+           
 
             <img className="mt-2" src="https://www.fitterfly.com/blog/wp-content/uploads/2023/02/Understanding-Your-BMI-A-Guide-to-Reading-a-BMI-Chart.jpg" alt="" width="100%" />
           </div>
