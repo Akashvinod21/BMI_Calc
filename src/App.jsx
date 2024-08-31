@@ -98,15 +98,16 @@ function App() {
             The calculator will give you an idea of how your weight compares to common values. Body Mass Index (BMI) is calculated as your weight divided by the square of your height or BMI = weight/height2.
           </p>
 
-          <div style={{ height: '680px', backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-md-5 p-md-5">
+          <div style={{ height: '600px', backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-md-5 p-md-5">
             <h4 className="p-2 mt-md-5 mt-3 fs-1" style={{ color: "black" }}>BMI Result: {bmi}</h4>
             
             <div className="row w-100">
               <div className="col-md-6">
               <p className='fw-bold p-md-2 text-center'>{text}</p>
-              <div className='justify-content-center align-items-center' style={{height:"150px"}}>
+              <div className='justify-content-center align-items-center d-flex' >
                 <ReactSpeedometer
                 width={275}
+                height={150}
                 
                 needleHeightRatio={0.60}
                 value={bmi}
@@ -131,8 +132,8 @@ function App() {
               </div>
               </div>
               <div className="col-md-6">
-              <div className='shadow rounded mt-3' style={{ backgroundColor: 'transparent' }} >
-              <form className="mt-md-4 p-5" onSubmit={calculate}>
+              <div className='shadow rounded' style={{ backgroundColor: 'transparent' }} >
+              <form className=" p-5" onSubmit={calculate}>
               <div className="mb-3">
               <TextField id="filled-basic" label="Height(cm)" variant="filled" className="w-100" onChange={(e)=>validate(e)} name="height" value={height||""} />
                 {!IsHeight &&
