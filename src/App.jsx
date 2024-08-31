@@ -88,8 +88,8 @@ function App() {
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh', padding: '20px' }}>
       <div className="row">
-        <div className="col-md-2 col-sm-1"></div>
-        <div className="col-md-8 col-sm-10 justify-content-center align-items-center p-5">
+        <div className="col-md-2 "></div>
+        <div className="col-md-8  justify-content-center align-items-center p-md-5">
           <h3 className="text-center mt-3 text-light">BMI Calculator</h3>
           <p className="text-center m-4 text-light">
             BMI (body mass index) is a measure for adults to check what category their height and weight puts them in - underweight, healthy, or overweight.
@@ -98,7 +98,7 @@ function App() {
             The calculator will give you an idea of how your weight compares to common values. Body Mass Index (BMI) is calculated as your weight divided by the square of your height or BMI = weight/height2.
           </p>
 
-          <div style={{ height: '680px', width: "100%", backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-5 p-5">
+          <div style={{ height: '680px', backgroundColor: color }} className="shadow rounded d-flex justify-content-center align-items-center flex-column mt-md-5 p-md-5">
             <h4 className="p-2 mt-md-5 mt-3 fs-1" style={{ color: "black" }}>BMI Result: {bmi}</h4>
             
             <div className="row w-100">
@@ -168,7 +168,7 @@ function App() {
             If you think you have an eating disorder, the BMI calculator may not be suitable for you.
           </p>
         </div>
-        <div className="col-md-2 col-sm-1"></div>
+        <div className="col-md-2 "></div>
       </div>
     </div>
   );
